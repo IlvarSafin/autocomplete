@@ -14,13 +14,13 @@ public class NewApp {
         while (true) {
             System.out.print("Write condition: ");
             in = scanner.nextLine();
-            if ("!qui".equals(in)){
+            if ("!quit".equals(in)){
                 break;
             }
             System.out.print("\nWrite beginning: ");
             String str = scanner.nextLine();
             System.out.println();
-            if ("!qui".equals(str)){
+            if ("!quit".equals(str)){
                 break;
             }
             start = System.currentTimeMillis();

@@ -132,7 +132,11 @@ public class Parser {
                     }
                 }
             }
-            if ('T' == startToEnd(addToLine(str, trueFalse))){
+            if (addToLine(str, trueFalse).length() == 0){
+                if (trueFalse.get(0) == 'T'){
+                    airports.add(fields);
+                }
+            } else if ('T' == startToEnd(addToLine(str, trueFalse))){
                 airports.add(fields);
             }
             if (ids.size()>i){
@@ -305,7 +309,7 @@ public class Parser {
                 if (in.charAt(i) == '='){
                     sign = '=';
                     ++i;
-                } else if(in.charAt(i) == '<' && in.charAt(i + 1) == '>'){
+                } else if(in.length() > (i + 1) && in.charAt(i) == '<' && in.charAt(i + 1) == '>'){
                     sign = ' ';
                     i += 2;
                 }else {
